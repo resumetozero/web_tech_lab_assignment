@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Replacement</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    main {
+        padding: 20px;
+        margin-top: 20px;
+        border: 2px solid #333;
+    }
+    .content1 {
+        font-size: 24px;
+        color: #007bff;
+    }
+    .content2 {
+        font-size: 36px;
+        color: #ff5733;
+    }
+    #replaceButton {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Page Contents</h1>
+
+<main class="content1">
+    <p>This is the initial content within the main section.</p>
+</main>
+
+<button id="replaceButton" onclick="replaceContent()">Replace Content</button>
+
+<footer>
+    <p>This is content outside the main section.</p>
+</footer>
+
+<script>
+function replaceContent() {
+    var mainSection = document.querySelector('main');
+    mainSection.innerHTML = "<p>This is the replaced content with a different style.</p>";
+    mainSection.classList.remove('content1');
+    mainSection.classList.add('content2');
+}
+</script>
+
+</body>
+</html>

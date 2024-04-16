@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Background Color and Text</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    h1 {
+        font-size: 36px;
+        margin-top: 50px;
+    }
+    #changeButton {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<h1 id="heading">Original Heading</h1>
+<button id="changeButton" onclick="changeStyles()">Change Styles</button>
+
+<script>
+function changeStyles() {
+    var heading = document.getElementById('heading');
+    var button = document.getElementById('changeButton');
+    document.body.style.backgroundColor = 'lightgreen';
+    heading.style.color = 'red';
+    heading.style.fontSize = '48pt';
+    heading.innerText = "Modified Heading";
+    heading.insertAdjacentHTML('afterend', '<button>Click Me</button>');
+}
+</script>
+
+</body>
+</html>
