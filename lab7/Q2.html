@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype 3</title>
+</head>
+<body>
+    <h1>Shopping List</h1>
+    <input type="text" id="item" placeholder="Enter item">
+    <button onclick="addItem()">Add Item</button>
+    <ul id="list"></ul>
+    
+    <h2>Page Access Count</h2>
+    <p id="accessCount"></p>
+
+    <script>
+        // Function to add item to the list
+        function addItem() {
+            var itemInput = document.getElementById('item');
+            var item = itemInput.value.trim();
+            if (item !== '') {
+                var list = document.getElementById('list');
+                var listItem = document.createElement('li');
+                listItem.textContent = item;
+                list.appendChild(listItem);
+                saveListToLocalStorage();
+                itemInput.value = ''; // Clear the input field
+            }
+        }
+
+        // Function to save list to local storage
+        function saveListToLocalStorage() {
+            var listItems = document.querySelectorAll('#list li');
+            var itemList = [];
+            listItems.forEach(function (item) {
+                itemList.push(item.textContent);
+            });
+            localStorage.setItem('shoppingList', JSON.stringify(itemList));
+        }
+
+        // Function to load list from local storage
+        function loadListFromLocalStorage() {
+            var storedList = localStorage.getItem('shoppingList');
+            if (storedList) {
+                var itemList = JSON.parse(storedList);
+                var list = document.getElementById('list');
+                itemList.forEach(function (item) {
+                    var listItem = document.createElement('li');
+                    listItem.textContent = item;
+                    list.appendChild(listItem);
+                });
+            }
+        }
+
+        // Function to update and display page access count
+        function updatePageAccessCount() {
+            var count = localStorage.getItem('pageAccessCount');
+            if (!count) {
+                count = 1;
+            } else {
+                count = parseInt(count) + 1;
+            }
+            localStorage.setItem('pageAccessCount', count);
+            document.getElementById('accessCount').textContent = 'Page accessed ' + count + ' times.';
+        }
+
+        // Load list and update page access count when the page loads
+        window.onload = function () {
+            loadListFromLocalStorage();
+            updatePageAccessCount();
+        };
+    </script>
+</body>
+</html>
