@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spinner</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        animation: spin 1s infinite linear;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2 id="word">Hello</h2>
+    <input type="text" id="textInput" placeholder="Enter a word or phrase">
+    <button onclick="changeWord()">Change Word</button>
+</div>
+
+<script>
+function changeWord() {
+    var input = document.getElementById("textInput").value;
+    if (input !== "") {
+        document.getElementById("word").innerText = input;
+    }
+}
+</script>
+
+</body>
+</html>

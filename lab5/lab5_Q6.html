@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Page Creation</title>
+</head>
+<body>
+<button onclick="makePage();">Click Here</button>
+<script>
+function makePage() {
+    var h1 = document.createElement('h1');
+    h1.textContent = "I am an H1";
+   
+    var paragraph = document.createElement('p');
+    paragraph.textContent = "This is a paragraph followed by a list";
+   
+    var ol = document.createElement('ol');
+    ol.setAttribute('type', 'I');
+   
+    var li1 = document.createElement('li');
+    li1.textContent = "This is first";
+    ol.appendChild(li1);
+   
+    var li2 = document.createElement('li');
+    li2.textContent = "This is second";
+    ol.appendChild(li2);
+   
+    document.body.appendChild(h1);
+    document.body.appendChild(paragraph);
+    document.body.appendChild(ol);
+}
+</script>
+
+
+</body>
+</html>
