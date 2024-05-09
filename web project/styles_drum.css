@@ -1,0 +1,203 @@
+body {
+  text-align: center;
+  background-image: url("Drumy.jpg");
+}
+/* Style the navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  border-radius: 20px;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+}
+
+/* Change color of links on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #DBEDF3;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 #e00b6b;
+
+}
+
+h2 {
+  font-size: 5rem;
+  color: black;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 greenyellow;
+}
+
+.metronom{
+  width: 20%;
+  margin: 0% 1% 0% 77%;
+  background-color:grey;
+  border-radius: 10px;
+}
+
+.metronom-text{
+  font-size: 40px;
+}
+
+.metronom_button{
+  width: 80px; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+  height: 50px;
+  background-color: white;
+  color: #5cc8e1;
+  transition-duration: 200ms;
+}
+
+.metronom_button:hover{
+  color: white;
+  background-color: #5cc8e1;
+}
+
+#container span {
+  width: 5px;
+  height: 5px;
+  bottom: 0px;
+  position: absolute;
+  background: red;
+  animation: bodong 0.5s infinite ease;
+}
+
+#container span:first-child {
+  left: 0px;
+  animation-delay: 0.3s;
+}
+
+#container span:nth-child(2) {
+  left: 7px;
+  animation-delay: 0.4s;
+}
+#container span:nth-child(3) {
+  left: 14px;
+  animation-delay: 0.6s;
+}
+#container span:nth-child(4) {
+  left: 21px;
+  animation-delay: 0.8s;
+}
+#container span:nth-child(5) {
+  left: 28px;
+  animation-delay: 1s;
+}
+
+@keyframes bodong {
+  0% {
+    height: 5px;
+    background: bule;
+  }
+  30% {
+    height: 15px;
+    background: bule;
+  }
+  60% {
+    height: 20px;
+    background: bule;
+  }
+  80% {
+    height: 15px;
+    background: bule;
+  }
+  100% {
+    height: 5px;
+    background: bule;
+  }
+}
+
+#name {
+  color: red;
+}
+
+.g {
+  background-image: url("images/kick.png");
+
+}
+
+.a {
+  background-image: url("images/tom2.png");
+}
+
+.s {
+  background-image: url("images/tom3.png");
+}
+
+.d {
+  background-image: url("images/crash.png");
+}
+
+.j {
+  background-image: url("images/snare.png");
+}
+
+.k {
+  background-image: url("images/tom4.png");
+
+}
+
+.l {
+  background-image: url("images/tom1.png");
+
+}
+
+.set {
+  margin: 5% auto;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #03688a;
+  opacity: 0.5;
+}
+
+.red {
+  color: red;
+}
+
+.drum {
+  outline: none;
+  border: 10px solid #404B69;
+  font-size: 5rem;
+  font-family: 'Arvo', cursive;
+  line-height: 2;
+  font-weight: 900;
+  color: #4b0022;
+  text-shadow: 3px 0 #DBEDF3;
+  border-radius: 15px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+}
+
+footer{
+  background-color: white;
+  width: 100vw;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
